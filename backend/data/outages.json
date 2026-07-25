@@ -1,0 +1,29 @@
+[
+  {
+    "customerId": "C1001",
+    "zipCode": "75001",
+    "status": "ACTIVE",
+    "reason": "Transformer failure",
+    "affectedCustomers": 350,
+    "estimatedRestoration": "2026-07-26 16:30",
+    "priority": "HIGH"
+  },
+  {
+    "customerId": "C1002",
+    "zipCode": "75002",
+    "status": "ACTIVE",
+    "reason": "Weather related equipment damage",
+    "affectedCustomers": 120,
+    "estimatedRestoration": "2026-07-26 18:00",
+    "priority": "MEDIUM"
+  },
+  {
+    "customerId": "C1003",
+    "zipCode": "75003",
+    "status": "RESOLVED",
+    "reason": "Scheduled maintenance completed",
+    "affectedCustomers": 0,
+    "estimatedRestoration": "Completed",
+    "priority": "LOW"
+  }
+]

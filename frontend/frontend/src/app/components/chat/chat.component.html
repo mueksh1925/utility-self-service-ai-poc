@@ -1,0 +1,40 @@
+<div class="chat-container">
+
+<h2>
+Utility AI Assistant
+</h2>
+
+
+<div class="messages">
+
+<div
+*ngFor="let message of messages">
+
+<strong>
+{{message.sender}}
+</strong>
+
+<p>
+{{message.text}}
+</p>
+
+</div>
+
+</div>
+
+
+<input
+[(ngModel)]="question"
+placeholder="Ask your utility question"
+/>
+
+
+<button
+(click)="sendMessage()">
+
+Send
+
+</button>
+
+
+</div>

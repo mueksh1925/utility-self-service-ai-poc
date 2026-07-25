@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-
+import json
 router = APIRouter(
     prefix="/api/billing",
     tags=["Billing"]
@@ -8,9 +8,13 @@ router = APIRouter(
 
 @router.get("/{customer_id}")
 def get_bill(customer_id: str):
+    with open("data/bills.json") as file:
+        bills=json.load(file)
+
+    for bill in bills:
+        if bill["customerId"] == customer_id:
+            return bill
+
     return {
-        "customerId": customer_id,
-        "currentBill": 125.50,
-        "dueDate": "2026-08-10",
-        "paymentStatus": "PENDING"
+        "message":"Billing information not found"
     }

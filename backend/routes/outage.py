@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+import json
 
 router = APIRouter(
     prefix="/api/outages",
@@ -6,12 +7,19 @@ router = APIRouter(
 )
 
 
-@router.get("/{zip_code}")
-def check_outage(zip_code: str):
+@router.get("/{customer_id}")
+def check_outage(customer_id: str):
+
+    with open("data/outages.json") as file:
+        outages = json.load(file)
+
+    for outage in outages:
+
+        if outage["customerId"] == customer_id:
+            return outage
 
     return {
-        "zipCode": zip_code,
-        "outageStatus": "ACTIVE",
-        "affectedCustomers": 350,
-        "estimatedRestoration": "2026-07-26 18:00"
+        "customerId": customer_id,
+        "status": "NO_OUTAGE",
+        "message": "No active outage found"
     }

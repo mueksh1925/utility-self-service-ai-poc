@@ -1,0 +1,16 @@
+[
+  {
+    "customerId": "C1001",
+    "name": "John Smith",
+    "mobile": "9876543210",
+    "email": "john@test.com",
+    "address": "Austin Texas"
+  },
+  {
+    "customerId": "C1002",
+    "name": "Mary Wilson",
+    "mobile": "8765432109",
+    "email": "mary@test.com",
+    "address": "Dallas Texas"
+  }
+]

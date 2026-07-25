@@ -1,0 +1,14 @@
+[
+ {
+  "customerId":"C1001",
+  "amount":"$132.45",
+  "dueDate":"July 30",
+  "status":"Unpaid"
+ },
+ {
+  "customerId":"C1002",
+  "amount":"$98.20",
+  "dueDate":"August 5",
+  "status":"Paid"
+ }
+]

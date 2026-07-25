@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-
+import json
 
 router = APIRouter(
     prefix="/api/customers",
@@ -10,10 +10,13 @@ router = APIRouter(
 @router.get("/{customer_id}")
 def get_customer(customer_id: str):
 
+    with open("data/customers.json") as file:
+        customers=json.load(file)
+
+    for customer in customers:
+        if customer["customerId"] == customer_id:
+            return customer
+
     return {
-        "customerId": customer_id,
-        "name": "John Smith",
-        "address": "123 Main Street",
-        "serviceType": "Electricity",
-        "status": "ACTIVE"
+        "message":"Customer not found"
     }

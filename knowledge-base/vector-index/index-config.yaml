@@ -1,0 +1,24 @@
+index_name: utility_kb_vector_index
+
+description:
+  Utility customer self-service knowledge retrieval
+
+embedding:
+  provider: watsonx
+  model: slate-embedding
+
+chunking:
+  size: 700
+  overlap: 120
+
+retrieval:
+  type: similarity_search
+  top_k: 5
+  similarity_threshold: 0.75
+
+metadata:
+  enabled: true
+  fields:
+    - category
+    - document_type
+    - last_updated
